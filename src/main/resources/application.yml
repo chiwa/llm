@@ -1,0 +1,4 @@
+llm:
+  ollama:
+    base-url: http://localhost:11434
+    model-name: llama3.2:latest
