@@ -4,7 +4,6 @@ import com.zengcode.llm.agent.DevOpsAgent;
 import com.zengcode.llm.agent.FreeAskAgent;
 import com.zengcode.llm.agent.JavaAgent;
 import com.zengcode.llm.agent.SpringAgent;
-import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;
 import dev.langchain4j.service.AiServices;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -17,7 +16,7 @@ public class OllamaConfiguration {
 
     @Bean
     public FreeAskAgent freeAskAgent(OllamaProperties properties) {
-        ChatLanguageModel model = OllamaChatModel.builder()
+        OllamaChatModel model = OllamaChatModel.builder()
                 .baseUrl(properties.getBaseUrl())
                 .modelName(properties.getModelName())
                 .build();
@@ -27,7 +26,7 @@ public class OllamaConfiguration {
 
     @Bean
     public JavaAgent javaAgent(OllamaProperties properties) {
-        ChatLanguageModel model = OllamaChatModel.builder()
+        OllamaChatModel model = OllamaChatModel.builder()
                 .baseUrl(properties.getBaseUrl())
                 .modelName(properties.getModelName())
                 .build();
@@ -36,7 +35,7 @@ public class OllamaConfiguration {
 
     @Bean
     public SpringAgent springAgent(OllamaProperties properties) {
-        ChatLanguageModel model = OllamaChatModel.builder()
+        OllamaChatModel model = OllamaChatModel.builder()
                 .baseUrl(properties.getBaseUrl())
                 .modelName(properties.getModelName())
                 .build();
@@ -45,7 +44,7 @@ public class OllamaConfiguration {
 
     @Bean
     public DevOpsAgent devOpsAgent(OllamaProperties properties) {
-        ChatLanguageModel model = OllamaChatModel.builder()
+        OllamaChatModel model = OllamaChatModel.builder()
                 .baseUrl(properties.getBaseUrl())
                 .modelName(properties.getModelName())
                 .build();
